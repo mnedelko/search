@@ -1,0 +1,98 @@
+%%%%%%%%%
+%.P    G% 
+% %.%G%%%  
+%G    %%% 
+%%%%%%%%%
+
+layoutText = [%%%%%%%%%,%.P    G%,% %.%G%%%,%G    %%%,%%%%%%%%%] 
+
+Layout__init >self.width
+len(layoutText[0]) = 9
+
+Layout__init >self.height
+len(layoutText) = 5
+
+Layout__init >self.walls
+Grid(self.width, self.height, False)
+
+
+
+
+self.width = 
+
+
+
+Grid__init__ > self.data:
+1    [False,False,False,False,False] |
+2    [False,False,False,False,False] |
+3    [False,False,False,False,False] |
+4    [False,False,False,False,False] | WIDTH
+5    [False,False,False,False,False] |
+6    [False,False,False,False,False] |
+7    [False,False,False,False,False] |
+8    [False,False,False,False,False] |
+9    [False,False,False,False,False] V
+        1     2     3     4     5
+      ----------------------------->
+                   HEIGHT
+
+
+
+Grid __str__> self.data:                ## returns the self.data object in a string format
+
+out = [[str(self.data[x][y])[0] for x in range(self.width)] for y in range(self.height)]
+
+out: [F,F,F,F,F,F,F,F,F][F,F,F,F,F,F,F,F,F][F,F,F,F,F,F,F,F,F}[F,F,F,F,F,F,F,F,F][F,F,F,F,F,F,F,F,F]
+     |0|1|2|3|4|5|6|7|8|
+
+out.reverse then has us reverse the Grid. and return the following after:
+    return '\n'.join([''.join(x) for x in out]):
+
+F F F F F F F F F
+F F F F F F F F F
+F F F F F F F F F
+F F F F F F F F F
+F F F F F F F F F
+
+%%%%%%%%%
+%G    %%%
+% %.%G%%%  
+%.P    G% 
+%%%%%%%%%
+
+THE ALTERNATIVE SCENARIO
+
+1    [False,False,False,False,False,False,False,False,False] |
+2    [False,False,False,False,False,False,False,False,False] |
+3    [False,False,False,False,False,False,False,False,False] | HEIGHT
+4    [False,False,False,False,False,False,False,False,False] |
+5    [False,False,False,False,False,False,False,False,False] V 
+
+        1     2     3     4     5     6     7     8     9
+      ------------------------------------------------------>
+                            WIDTH
+
+out = [[str(self.data[x][y])[0] for x in range(self.width)] for y in range(self.height)]
+
+out: [F,F,F,F,F,X,X,X,X]
+     |0|1|2|3|4|
+
+
+
+
+Grid__init__ > self.processlayoutText(layoutText):
+    maxY = self.height - 1 == 5 - 1 == 4
+
+for 0 in 4:
+    layoutChar = layoutText[4][0] = %
+    .
+    .
+    . this apporach makes us count from the last row to the first row which flips our layout
+
+
+%%%%%%%%%
+%G    %%%
+% %.%G%%%  
+%.P    G% 
+%%%%%%%%%
+
